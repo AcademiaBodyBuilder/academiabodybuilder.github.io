@@ -1,42 +1,26 @@
-import {Component} from '@angular/core';
-import {Nav, Platform } from 'ionic-angular';
-import {InAppBrowser} from 'ionic-native';
-import {Agenda} from '../../pages/agenda/agenda';
-import {Cidades} from '../../pages/cidades/cidades';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 @Component({
-  selector: 'home',
-  templateUrl: 'template.html'
+  selector: 'page-home',
+  templateUrl: 'home.html'
 })
-export class Home {
-  nav: Nav;
-  platform: Platform;
-  mySlideOptions: Object;
+export class HomePage {
 
-  constructor(nav: Nav, platform: Platform) {
-    this.nav = nav;
-    this.platform = platform;
+  constructor(public navCtrl: NavController, private iab: InAppBrowser) {
 
-    this.mySlideOptions = {
-      autoplay: 3000,
-      loop: true
-    };
+  }
+  openToledo(){
+    let browser = this.iab.create('http://academia.vc/bodybuilder/', '_self', 'hidden=no');
+    browser.show();
   }
 
-  openAgenda() {
-    this.nav.setRoot(Agenda);
+  openMCR(){
+    let browser = this.iab.create('http://academia.vc/bodybuildermcr/', '_self', 'hidden=no');
+    browser.show();
   }
 
-  openRegister() {
-    this.nav.setRoot(Cidades);
-  }
-  
-  openBitBar(){
-    if(this.platform.is('core') || this.platform.is('mobileweb')){
-      window.open('https://play.google.com/store/apps/details?id=space.joselito.bitbar', '_blank');
-    } else {
-      InAppBrowser.open("https://play.google.com/store/apps/details?id=space.joselito.bitbar", "_system");
-    }
-  }
+
 }

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Área do Aluno</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <img src="assets/logo2.png" />
+  </div>
+  <h2>Bem Vindo</h2>
+  <p>
+    Escolha sua academia abaixo:
+  </p>
+
+  <ion-item (click)="openToledo()" color="light" gap="2">
+    <h2>Unidade Toledo</h2>
+    <p>Rua General Daltro Filho 1148</p>
+    <p>Vila Industrial - Toledo,PR</p>
+    <p>(45)3054-8823</p>
+    <ion-thumbnail item-left>
+      <img src="assets/logo.png">
+    </ion-thumbnail>
+  </ion-item>
+  <ion-item (click)="openMCR()" color="light">
+    <h2>Unidade Marechal Candido Rondon</h2>
+    <p>Av. Maripá 1962</p>
+    <p>Marechal Candido Rondon,PR</p>
+    <p>(45)2031-0594</p>
+    <ion-thumbnail item-left>
+      <img src="assets/logo.png">
+    </ion-thumbnail>
+  </ion-item>
+</ion-content>
